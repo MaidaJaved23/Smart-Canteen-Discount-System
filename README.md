@@ -1,3 +1,7 @@
+<p align="center"><img src="assets/header.svg" alt="Smart Canteen Discount System" width="100%"></p>
+
+<p align="center"><a href="preview.html"><b>▶ Open the interactive preview (preview.html)</b></a></p>
+
 # Python Conditional Statements — Smart Canteen Discount System
 
 A beginner-friendly Python console program created during the Python lecture on **conditional statements**. It demonstrates how a program makes decisions using `if`, `elif`, and `else` in a realistic college-canteen scenario.
@@ -18,6 +22,8 @@ The class used a canteen bill to explain how conditions choose one outcome from 
 | Below Rs. 1,000 | 0% |
 
 The program displays the original bill, membership status, total discount rate, discount amount, and final payable amount.
+
+![Discount rate by bill tier](assets/tiers-chart.svg)
 
 ## Concepts Covered
 
@@ -55,6 +61,20 @@ For example, for a bill of Rs. 3,000:
 - Final payable amount: Rs. 3,000 − Rs. 750 = Rs. 2,250
 
 **Input-validation note:** The current program checks whether the numeric bill amount is greater than zero. It does not yet handle non-numeric bill input with `try/except`, and it does not reject membership responses other than `yes` or `no`. Only an exact `yes` response (after trimming surrounding spaces and converting to lowercase) activates the membership benefit.
+
+## Program Flowchart
+
+![Program flowchart](assets/flowchart.svg)
+
+## Data Model (ER Diagram)
+
+The program has no database; this diagram shows how its data relates conceptually.
+
+![ER diagram](assets/er-diagram.svg)
+
+## Preview
+
+Open [`preview.html`](preview.html) in any browser for an interactive calculator and all diagrams in one page. After enabling GitHub Pages for this repository, it is also available at `https://<your-username>.github.io/python-conditionals-smart-canteen/preview.html`.
 
 ## How to Run
 
@@ -116,3 +136,5 @@ Update README to match smart canteen discount logic
 ## Suggested Repository Description
 
 Beginner Python lesson demonstrating if, elif, else, comparison operators, membership-based discount calculations, and basic bill validation in a real-world canteen discount calculator.
+
+<p align="center"><img src="assets/footer.svg" alt="Footer" width="100%"></p>

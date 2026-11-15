@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Smart Canteen Discount System — Preview</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--ink:#f2f5fb;--mut:#9fb0d6;--mint:#35e0b5;--amb:#ffc857;--card:#121d33}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Segoe UI",Helvetica,Arial,sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+main{max-width:1000px;margin:auto;padding:20px}img{width:100%;height:auto;display:block;border-radius:20px}
+h2{margin:48px 0 14px;font-size:28px}p{color:var(--mut);max-width:70ch}
+.calc{background:var(--card);border-radius:20px;padding:24px;display:grid;gap:16px;border:1px solid #243557}
+label{display:grid;gap:6px;font-weight:600}input[type=number]{font:inherit;padding:12px;border-radius:12px;border:1px solid #33497a;background:#0b1220;color:var(--ink)}
+.chk{display:flex;align-items:center;gap:10px}input:focus-visible{outline:3px solid var(--amb)}
+pre{background:#050a14;border-radius:14px;padding:18px;overflow-x:auto;color:var(--mint);font-size:16px;margin:0;min-height:190px}
+</style></head><body><main>
+<img src="assets/header.svg" alt="Smart Canteen Discount System header">
+<h2>Try the calculator</h2><p>Same rules as the Python program: standard tier rate, plus 5 points only when the answer is exactly “yes”.</p>
+<div class="calc"><label>Total bill (Rs.)<input id="b" type="number" min="0" step="0.01" value="3000"></label>
+<label class="chk"><input id="m" type="checkbox" checked> I have a membership card</label><pre id="o" aria-live="polite"></pre></div>
+<h2>Discount tiers</h2><img src="assets/tiers-chart.svg" alt="Discount rate by bill tier chart">
+<h2>Program flow</h2><img src="assets/flowchart.svg" alt="Program flowchart">
+<h2>Data model</h2><img src="assets/er-diagram.svg" alt="ER diagram">
+<h2></h2><img src="assets/footer.svg" alt="Footer">
+</main><script>
+const b=document.getElementById('b'),m=document.getElementById('m'),o=document.getElementById('o');
+function run(){const x=parseFloat(b.value);
+if(!(x>0)){o.textContent="Error: bill amount must be greater than zero.";return}
+let r=x>=3000?20:x>=2000?10:x>=1000?5:0;if(m.checked)r+=5;
+const d=x*r/100,f=x-d;
+o.textContent=`===== BILL SUMMARY =====\nOriginal Bill: Rs. ${x.toFixed(2)}\nMembership Card: ${m.checked?'Yes':'No'}\nTotal Discount Rate: ${r}%\nDiscount Amount: Rs. ${d.toFixed(2)}\nFinal Payable: Rs. ${f.toFixed(2)}`+(d>0?`\nCongratulations! You saved Rs. ${d.toFixed(2)}`:'')}
+b.oninput=m.onchange=run;run();
+</script></body></html>

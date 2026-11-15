@@ -137,4 +137,11 @@ Update README to match smart canteen discount logic
 
 Beginner Python lesson demonstrating if, elif, else, comparison operators, membership-based discount calculations, and basic bill validation in a real-world canteen discount calculator.
 
+
+<div align="center">
+
 <p align="center"><img src="assets/footer.svg" alt="Footer" width="100%"></p>
+
+<p><b>Author:</b> Maida Javed</p>
+
+</div>
